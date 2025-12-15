@@ -95,14 +95,14 @@ app-header a:hover {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/coaching-graphics.jpeg') no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/backgroung-graphics-1.png') no-repeat center center/cover;
   color: var(--white);
   text-align: center;
   padding: 8rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 60vh;
 }
 
 .hero-content h1 {
