@@ -39,7 +39,7 @@ h2 {
 }
 
 section {
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
 }
 
 .container {
@@ -138,6 +138,7 @@ app-header a:hover {
   display: flex;
   align-items: center;
   gap: 2rem;
+  line-height: 1.5em;
 }
 
 .about-image img {
@@ -151,15 +152,17 @@ app-header a:hover {
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+  line-height: 1.5em;
 }
 
 .card {
   background-color: var(--white);
-  padding: 2rem;
-  border-radius: 10px;
+  padding: 1rem;
+  border-radius: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 20rem;
   text-align: center;
+  margin: 1rem 0;
 }
 
 .card:hover {
@@ -170,6 +173,14 @@ app-header a:hover {
 .card h3 {
   color: var(--primary-color);
   margin-bottom: 1rem;
+}
+
+.service-list {
+  line-height: 1.5em;
+}
+
+.service-list li {
+  margin: 0.5rem;
 }
 
 /* Contact Section */
