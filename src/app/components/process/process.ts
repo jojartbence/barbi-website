@@ -6,6 +6,4 @@ import { Component } from '@angular/core';
   templateUrl: './process.html',
   styleUrl: './process.scss',
 })
-export class Process {
-
-}
+export class Process {}

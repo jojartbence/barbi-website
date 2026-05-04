@@ -23,7 +23,9 @@ body {
   box-sizing: border-box;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
@@ -38,7 +40,8 @@ h2 {
   margin-bottom: 2rem;
 }
 
-p, li {
+p,
+li {
   line-height: 1.5em;
   text-align: justify;
   text-justify: inter-word;
@@ -101,7 +104,9 @@ app-header a:hover {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/backgroung-graphics-1.png') no-repeat center center/cover;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('assets/backgroung-graphics-1.png') no-repeat center center/cover;
   color: var(--white);
   text-align: center;
   padding: 8rem 2rem;
