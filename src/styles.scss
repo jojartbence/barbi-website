@@ -40,6 +40,8 @@ h2 {
 
 p, li {
   line-height: 1.5em;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 section {
@@ -177,13 +179,22 @@ app-header a:hover {
   margin-bottom: 1rem;
 }
 
+.card p {
+  text-align: center;
+}
+
 .service-list li {
   margin: 0.5rem;
 }
 
+/* Process Section */
+#process {
+  background-color: var(--gray);
+}
+
 /* Contact Section */
 #contact {
-  background-color: var(--gray);
+  background-color: var(--background-color);
 }
 
 .contact-content {
