@@ -60,6 +60,15 @@ For more information on using the Angular CLI, including detailed command refere
 
 ## Contributing
 
+### Build and host locally
+
+```bash
+npm install
+ng serve
+```
+
+### Publish to github pages
+
 ```bash
 git checkout main
 ng serve --host 0.0.0.0
