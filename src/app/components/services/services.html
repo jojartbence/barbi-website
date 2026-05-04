@@ -46,31 +46,45 @@
     </p>
   </div>
   <div class="service-cards">
-    <div class="card">
-      <h3>Karrier coaching</h3>
-      <p>
-        Együtt dolgozunk a munkahelyi elakadásaidon, döntési helyzeteiden és a következő
-        karrierlépéseid kialakításán.
-      </p>
-    </div>
-    <div class="card">
-      <h3>Vezetői coaching</h3>
-      <p>
-        Támogatlak a vezetői szereped kialakításában és működtetésében, a vezetői identitásod
-        erősítésében és a szerepdilemmák tisztázásában.
-      </p>
-    </div>
-    <div class="card">
-      <h3>Álláskeresési tanácsadás</h3>
-      <p>
-        Az önéletrajzod átnézése, a kiválasztási folyamatok átbeszélése és interjúra való
-        felkészülés célzott tanácsadás keretében.
-      </p>
-    </div>
+    <a
+      class="card-link"
+      href="#career-coaching-details"
+      (click)="scrollTo('career-coaching-details')"
+    >
+      <div class="card">
+        <h3>Karrier coaching</h3>
+        <p>
+          Együtt dolgozunk a munkahelyi elakadásaidon, döntési helyzeteiden és a következő
+          karrierlépéseid kialakításán.
+        </p>
+      </div>
+    </a>
+    <a class="card-link" href="#lead-coaching-details" (click)="scrollTo('lead-coaching-details')">
+      <div class="card">
+        <h3>Vezetői coaching</h3>
+        <p>
+          Támogatlak a vezetői szereped kialakításában és működtetésében, a vezetői identitásod
+          erősítésében és a szerepdilemmák tisztázásában.
+        </p>
+      </div>
+    </a>
+    <a
+      class="card-link"
+      href="#job-apply-coaching-details"
+      (click)="scrollTo('job-apply-coaching-details')"
+    >
+      <div class="card">
+        <h3>Álláskeresési tanácsadás</h3>
+        <p>
+          Az önéletrajzod átnézése, a kiválasztási folyamatok átbeszélése és interjúra való
+          felkészülés célzott tanácsadás keretében.
+        </p>
+      </div>
+    </a>
   </div>
   <div>
     <div>
-      <h3>Karrier coaching - mit jelent ez a gyakorlatban?</h3>
+      <h3 id="career-coaching-details">Karrier coaching - mit jelent ez a gyakorlatban?</h3>
       <p>
         A karrier coaching során a <b>jelenlegi munkahelyi helyzeteddel</b>, az elakadásaidkal és a
         <b>következő lépéseiddel</b> dolgozunk. Olyan helyzetekben, amikor bizonytalan vagy,
@@ -89,7 +103,7 @@
       </p>
     </div>
     <div>
-      <h3>Vezetői coaching - mit jelent ez a gyakorlatban?</h3>
+      <h3 id="lead-coaching-details">Vezetői coaching - mit jelent ez a gyakorlatban?</h3>
       <p>
         <b
           >A vezetői coaching során a fókusz a
@@ -115,7 +129,9 @@
       </p>
     </div>
     <div>
-      <h3>Álláskeresési tanácsadás - mit jelent ez a gyakorlatban?</h3>
+      <h3 id="job-apply-coaching-details">
+        Álláskeresési tanácsadás - mit jelent ez a gyakorlatban?
+      </h3>
       <p>
         Ez a szolgáltatás akkor ideális számodra, ha az aktuális álláskeresési helyzetedben
         <b>konkrét, célzott támogatásra van szükséged</b>, és nem egy hosszabb coaching folyamatot
