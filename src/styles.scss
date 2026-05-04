@@ -38,6 +38,10 @@ h2 {
   margin-bottom: 2rem;
 }
 
+p, li {
+  line-height: 1.5em;
+}
+
 section {
   padding: 2rem 2rem;
 }
@@ -138,7 +142,6 @@ app-header a:hover {
   display: flex;
   align-items: center;
   gap: 2rem;
-  line-height: 1.5em;
 }
 
 .about-image img {
@@ -152,7 +155,6 @@ app-header a:hover {
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
-  line-height: 1.5em;
 }
 
 .card {
@@ -173,10 +175,6 @@ app-header a:hover {
 .card h3 {
   color: var(--primary-color);
   margin-bottom: 1rem;
-}
-
-.service-list {
-  line-height: 1.5em;
 }
 
 .service-list li {
