@@ -3,11 +3,13 @@
 
 :root {
   --primary-color: #2f6f6a;
-  --secondary-color: #f5a623;
   --text-color: #333;
-  --background-color: #f8f9fa;
+  --background-color: #e0dbd5;
+  --section-backround-color-1: #f8f9fa;
+  --section-backround-color-2: #cad4cb;
   --white: #f2f1ed;
   --gray: #eee;
+  --button-hover-color: #f5a623;
 }
 
 html {
@@ -141,12 +143,12 @@ app-header a:hover {
 }
 
 .cta-button:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--button-hover-color);
 }
 
 /* About Section */
 #about {
-  background-color: var(--white);
+  background-color: var(--section-backround-color-1);
 }
 
 .about-content {
@@ -161,6 +163,10 @@ app-header a:hover {
 }
 
 /* Services Section */
+#services {
+  background-color: var(--section-backround-color-2);
+}
+
 .service-cards {
   display: flex;
   justify-content: center;
@@ -198,12 +204,12 @@ app-header a:hover {
 
 /* Process Section */
 #process {
-  background-color: var(--gray);
+  background-color: var(--section-backround-color-1);
 }
 
 /* Contact Section */
 #contact {
-  background-color: var(--background-color);
+  background-color: var(--section-backround-color-2);
 }
 
 .contact-content {
@@ -243,7 +249,7 @@ app-header a:hover {
 }
 
 .contact-form button:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--button-hover-color);
 }
 
 /* Footer */
