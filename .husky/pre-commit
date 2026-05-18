@@ -1,13 +1,15 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-# Check if formatting is needed
-npx prettier --check . > /dev/null 2>&1
-if [ $? -ne 0 ]; then
-  echo "Running prettier to fix formatting issues..."
+# Run prettier check (don't modify yet)
+if ! npx prettier --check .; then
+  echo "Formatting issues found. Fixing with prettier..."
   npx prettier --write .
-  echo "Formatting issues were automatically fixed. Please review and re-stage changes."
+  echo "Files have been formatted. Review and stage changes before committing."
   exit 1
 fi
 
-npm run lint
+# Run lint
+if ! npm run lint; then
+  exit 1
+fi
