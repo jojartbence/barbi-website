@@ -23,7 +23,7 @@ body {
   line-height: 1.75;
   font-size: 18px;
   color: var(--text-color);
-  background-color: var(--background-color);
+  background-color: var(--white);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -183,7 +183,8 @@ app-header a:hover {
 
 /* Services Section */
 #services {
-  background-color: var(--section-backround-color-2);
+  background-color: var(--primary-color);
+  color: var(--white);
 }
 
 .service-cards {
