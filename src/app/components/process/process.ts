@@ -3,6 +3,7 @@ import { ScrollAnimationDirective } from '../../directives/scroll-animation.dire
 
 @Component({
   selector: 'app-process',
+  standalone: true,
   imports: [ScrollAnimationDirective],
   templateUrl: './process.html',
   styleUrl: './process.scss',

@@ -5,7 +5,7 @@
   --primary-color: #2f6f6a;
   --text-color: #333;
   --background-color: #e0dbd5;
-  --section-backround-color-1: #f8f9fa;
+  --section-backround-color-1: #d2c0aa;
   --section-backround-color-2: #cad4cb;
   --white: #f2f1ed;
   --gray: #eee;
@@ -143,6 +143,22 @@ app-header a:hover {
 }
 
 .cta-button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
   background-color: var(--button-hover-color);
 }
 

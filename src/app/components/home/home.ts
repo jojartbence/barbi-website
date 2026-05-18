@@ -3,6 +3,7 @@ import { ScrollAnimationDirective } from '../../directives/scroll-animation.dire
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [ScrollAnimationDirective],
   templateUrl: './home.html',
   styleUrl: './home.scss',

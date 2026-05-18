@@ -9,6 +9,7 @@ import { Process } from './components/process/process';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [Header, Home, About, Services, Contact, Footer, Process],
   templateUrl: './app.html',
   styleUrl: './app.scss',

@@ -3,6 +3,7 @@ import { ScrollAnimationDirective } from '../../directives/scroll-animation.dire
 
 @Component({
   selector: 'app-contact',
+  standalone: true,
   imports: [ScrollAnimationDirective],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',

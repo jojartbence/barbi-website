@@ -64,7 +64,7 @@ For more information on using the Angular CLI, including detailed command refere
 
 ```bash
 npm install
-ng serve
+ng serve --host 0.0.0.0
 ```
 
 ### Publish to github pages

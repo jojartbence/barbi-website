@@ -1,0 +1,42 @@
+.about-content {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding-right: 4rem;
+}
+
+.about-image {
+  flex: 0 0 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+.about-text {
+  flex: 0 0 55%;
+  max-width: 500px;
+}
+
+.button {
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    padding-right: 0;
+  }
+
+  .about-image {
+    flex: 0 0 auto;
+  }
+
+  .about-text {
+    flex: 0 0 auto;
+  }
+}
