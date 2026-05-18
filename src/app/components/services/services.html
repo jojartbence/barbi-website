@@ -46,11 +46,7 @@
     </p>
   </div>
   <div class="service-cards">
-    <a
-      class="card-link"
-      href="#career-coaching-details"
-      (click)="scrollTo('career-coaching-details')"
-    >
+    <a class="card-link" href="#" (click)="toggleCareerCoaching(); $event.preventDefault()">
       <div class="card">
         <h3>Karrier coaching</h3>
         <p>
@@ -59,7 +55,7 @@
         </p>
       </div>
     </a>
-    <a class="card-link" href="#lead-coaching-details" (click)="scrollTo('lead-coaching-details')">
+    <a class="card-link" href="#" (click)="toggleLeadCoaching(); $event.preventDefault()">
       <div class="card">
         <h3>Vezetői coaching</h3>
         <p>
@@ -68,11 +64,7 @@
         </p>
       </div>
     </a>
-    <a
-      class="card-link"
-      href="#job-apply-coaching-details"
-      (click)="scrollTo('job-apply-coaching-details')"
-    >
+    <a class="card-link" href="#" (click)="toggleJobApplyCoaching(); $event.preventDefault()">
       <div class="card">
         <h3>Álláskeresési tanácsadás</h3>
         <p>
@@ -83,7 +75,7 @@
     </a>
   </div>
   <div>
-    <div>
+    <div [@detail]="isCareerCoachingOpen ? 'visible' : 'hidden'" style="overflow: hidden">
       <h3 id="career-coaching-details">Karrier coaching - mit jelent ez a gyakorlatban?</h3>
       <p>
         A karrier coaching során a <b>jelenlegi munkahelyi helyzeteddel</b>, az elakadásaidkal és a
@@ -102,7 +94,7 @@
         működőképesek legyenek számodra.<br />
       </p>
     </div>
-    <div>
+    <div [@detail]="isLeadCoachingOpen ? 'visible' : 'hidden'" style="overflow: hidden">
       <h3 id="lead-coaching-details">Vezetői coaching - mit jelent ez a gyakorlatban?</h3>
       <p>
         <b
@@ -128,7 +120,7 @@
         kialakításán.<br />
       </p>
     </div>
-    <div>
+    <div [@detail]="isJobApplyCoachingOpen ? 'visible' : 'hidden'" style="overflow: hidden">
       <h3 id="job-apply-coaching-details">
         Álláskeresési tanácsadás - mit jelent ez a gyakorlatban?
       </h3>
