@@ -1,2 +1,13 @@
-npm run format
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Check if formatting is needed
+prettier --check . > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+  echo "Running prettier --write to fix formatting issues..."
+  prettier --write .
+  echo "Formatting issues were automatically fixed. Please review and re-stage changes."
+  exit 1
+fi
+
 npm run lint
