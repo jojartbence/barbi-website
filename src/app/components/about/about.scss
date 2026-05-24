@@ -1,42 +1,128 @@
 .about-content {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  padding-right: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .about-image {
-  flex: 0 0 45%;
   display: flex;
   justify-content: center;
+  position: sticky;
+  top: 100px;
 }
 
 .about-image img {
-  max-width: 80%;
+  max-width: 300px;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(26, 77, 74, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.02);
 }
 
 .about-text {
-  flex: 0 0 55%;
-  max-width: 500px;
+  p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: justify;
+  }
+
+  p:first-child {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+}
+
+.detailed-info {
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: rgba(26, 77, 74, 0.05);
+  border-left: 4px solid #e07b39;
+  border-radius: 8px;
+
+  h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    text-align: left;
+    color: var(--text-light);
+    line-height: 1.7;
+
+    &::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #e07b39;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  }
+
+  p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
 }
 
 .button {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    position: relative;
+    top: auto;
+  }
 }
 
 @media (max-width: 768px) {
   .about-content {
-    flex-direction: column;
-    padding-right: 0;
+    gap: 2rem;
   }
 
-  .about-image {
-    flex: 0 0 auto;
+  .about-text p {
+    font-size: 1rem;
   }
 
-  .about-text {
-    flex: 0 0 auto;
+  .detailed-info {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-image img {
+    max-width: 250px;
   }
 }

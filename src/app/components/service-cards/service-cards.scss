@@ -1,24 +1,151 @@
+#service-cards {
+  padding: 4rem 2rem;
+}
+
 .service-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  justify-items: center;
 }
 
 .card-link {
   text-decoration: none;
   color: inherit;
   display: block;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  height: 100%;
+  width: 100%;
+  max-width: 350px;
 }
 
 .card-link:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
 }
 
 .card {
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
   background: white;
+  border-left: 4px solid var(--accent-color);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    box-shadow: var(--shadow-lg);
+    border-left-color: var(--primary-color);
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+
+  h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+  }
+
+  p {
+    color: var(--text-light);
+    text-align: left;
+    margin: 0;
+    flex-grow: 1;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+}
+
+.card-link:hover .card h3 {
+  color: var(--accent-color);
+}
+
+/* Expandable Details Section */
+#service-cards > div:nth-child(2) {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  p {
+    color: var(--text-light);
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+
+    b {
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .service-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #service-cards {
+    padding: 3rem 1.5rem;
+  }
+
+  .service-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 2rem;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-cards {
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
 }
