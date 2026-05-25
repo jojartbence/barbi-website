@@ -109,89 +109,7 @@ section {
   margin: 0 auto;
 }
 
-/* Header */
-app-header header {
-  background-color: var(--surface-color);
-  box-shadow: var(--shadow-md);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.95);
-}
-
-app-header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.25rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-app-header .logo {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-app-header .logo:hover {
-  color: var(--primary-light);
-}
-
-app-header ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 2.5rem;
-}
-
-app-header li {
-  margin: 0;
-}
-
-app-header a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  position: relative;
-}
-
-app-header a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background-color: var(--accent-color);
-  transition: width 0.3s ease;
-}
-
-app-header a:hover {
-  color: var(--primary-light);
-}
-
-app-header a:hover::after {
-  width: 100%;
-}
-
-app-header a {
-  text-decoration: none;
-  color: var(--text-color);
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-app-header a:hover {
-  color: var(--primary-color);
-}
+/* Header styles moved to src/app/components/header/header.scss */
 
 /* Buttons & Forms */
 button,
@@ -252,42 +170,7 @@ textarea::placeholder {
   color: var(--text-light);
 }
 
-/* Hero Section */
-.hero {
-  background:
-    linear-gradient(135deg, rgba(26, 77, 74, 0.9), rgba(45, 122, 118, 0.8)),
-    url('assets/backgroung-graphics-1.png') no-repeat center center/cover;
-  color: white;
-  text-align: center;
-  padding: 8rem 2rem 6rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 70vh;
-  margin-top: 80px;
-}
-
-.hero-content {
-  max-width: 700px;
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.hero-content h1 {
-  color: white;
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
-  font-weight: 800;
-}
-
-.hero-content p {
-  font-size: 1.25rem;
-  margin-bottom: 2.5rem;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.95);
-  line-height: 1.8;
-}
-
+/* Hero and related styles moved to src/app/components/home/home.scss */
 .cta-button {
   background: linear-gradient(135deg, var(--accent-light), var(--accent-color));
   font-size: 1.1rem;
@@ -362,29 +245,6 @@ section:nth-child(even) {
     padding: 2.5rem 1.5rem;
   }
 
-  app-header nav {
-    padding: 1rem 1.5rem;
-  }
-
-  app-header ul {
-    gap: 1.5rem;
-    font-size: 0.95rem;
-  }
-
-  .hero {
-    min-height: 60vh;
-    padding: 6rem 1.5rem 4rem;
-    margin-top: 70px;
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .hero-content p {
-    font-size: 1.05rem;
-  }
-
   .cta-button {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
@@ -406,38 +266,5 @@ section:nth-child(even) {
 
   section {
     padding: 2rem 1rem;
-  }
-
-  app-header nav {
-    padding: 0.75rem 1rem;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  app-header ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-  }
-
-  app-header a {
-    padding: 0.5rem 0;
-    display: inline-block;
-  }
-
-  .hero {
-    min-height: 50vh;
-    padding: 4rem 1rem 3rem;
-    margin-top: 60px;
-  }
-
-  .hero-content h1 {
-    font-size: 1.5rem;
-  }
-
-  .hero-content p {
-    font-size: 0.95rem;
   }
 }

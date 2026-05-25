@@ -58,33 +58,33 @@
   margin-bottom: 1.5rem;
 }
 
-input,
-textarea {
+/* Use global base input/textarea styles from src/styles.scss.
+   Keep only contact-form specific overrides here. */
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   padding: 0.875rem 1rem;
   border: 2px solid rgba(26, 77, 74, 0.15);
   border-radius: 8px;
-  font-family: inherit;
-  font-size: 1rem;
-  color: var(--text-light);
   background-color: rgba(255, 255, 255, 0.5);
   transition: all 0.3s ease;
+}
 
-  &::placeholder {
-    color: rgba(90, 107, 121, 0.6);
-  }
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(90, 107, 121, 0.6);
+}
 
-  &:focus {
-    outline: none;
-    border-color: var(--primary-light);
-    background-color: white;
-    box-shadow: 0 0 0 4px rgba(45, 122, 118, 0.1);
-  }
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(45, 122, 118, 0.1);
 }
 
 textarea {
   resize: vertical;
-  font-family: inherit;
 }
 
 .contact-form form {

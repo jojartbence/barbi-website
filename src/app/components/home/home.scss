@@ -1,5 +1,10 @@
+/* Keep only the visual decorations and unique tweaks for the hero
+   Base layout and typography are defined in src/styles.scss. */
+
 .hero {
-  background: url('../../../assets/backgroung-graphics-1.png') no-repeat center center/cover;
+  background:
+    linear-gradient(135deg, rgba(26, 77, 74, 0.9), rgba(45, 122, 118, 0.8)),
+    url('../../../assets/backgroung-graphics-1.png') no-repeat center center/cover;
   color: white;
   text-align: center;
   padding: 8rem 2rem 6rem;
@@ -7,11 +12,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 75vh;
+  min-height: 70vh;
   margin-top: 80px;
   position: relative;
   overflow: hidden;
 
+  /* decorative glows used only on the home hero */
   &::before {
     content: '';
     position: absolute;
@@ -38,7 +44,7 @@
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 700px;
   animation: fadeInUp 0.8s ease-out;
   position: relative;
   z-index: 1;
@@ -52,49 +58,15 @@
   }
 
   p {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     margin-bottom: 2.5rem;
     text-align: center;
     color: rgba(255, 255, 255, 0.95);
     line-height: 1.8;
-    font-weight: 400;
   }
 }
 
-.cta-button {
-  background: linear-gradient(135deg, var(--accent-color), #ff9d5c);
-  color: white;
-  font-size: 1.1rem;
-  padding: 1rem 2.5rem;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
-  box-shadow: 0 12px 32px rgba(224, 123, 57, 0.3);
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 16px 40px rgba(224, 123, 57, 0.4);
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* CTA uses the global `.cta-button` definition in src/styles.scss; no component-level override needed. */
 
 @media (max-width: 1024px) {
   .hero-content h1 {
@@ -108,9 +80,8 @@
 
 @media (max-width: 768px) {
   .hero {
+    /* allow global base padding/height to apply, only slightly reduce min-height */
     min-height: 65vh;
-    padding: 6rem 1.5rem 4rem;
-    margin-top: 70px;
   }
 
   .hero-content h1 {
@@ -121,17 +92,12 @@
     font-size: 1.05rem;
   }
 
-  .cta-button {
-    padding: 0.75rem 2rem;
-    font-size: 1rem;
-  }
+  /* responsive sizing is handled globally */
 }
 
 @media (max-width: 480px) {
   .hero {
     min-height: 55vh;
-    padding: 4rem 1rem 3rem;
-    margin-top: 60px;
   }
 
   .hero-content h1 {
@@ -142,8 +108,5 @@
     font-size: 0.95rem;
   }
 
-  .cta-button {
-    padding: 0.65rem 1.5rem;
-    font-size: 0.95rem;
-  }
+  /* responsive sizing is handled globally */
 }

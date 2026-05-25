@@ -1,12 +1,14 @@
+/* Header (moved from src/styles.scss) */
+
 header {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: var(--surface-color);
   box-shadow: var(--shadow-md);
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 nav {
@@ -27,7 +29,7 @@ nav {
   transition: color 0.3s ease;
 
   &:hover {
-    color: var(--accent-color);
+    color: var(--primary-light);
   }
 }
 
@@ -49,28 +51,28 @@ a {
   font-weight: 500;
   transition: color 0.3s ease;
   position: relative;
-  padding: 0.5rem 0;
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--accent-color);
-    transition: width 0.3s ease;
-  }
-
-  &:hover {
-    color: var(--primary-color);
-
-    &::after {
-      width: 100%;
-    }
-  }
 }
 
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-light);
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Small mobile adjustments */
 @media (max-width: 1024px) {
   nav {
     padding: 1rem 1.5rem;
