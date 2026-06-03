@@ -30,7 +30,11 @@
   </div>
 
   <div>
-    <div [@detail]="isCareerCoachingOpen ? 'visible' : 'hidden'" style="overflow: hidden">
+    <div
+      class="card-detail"
+      [@detail]="isCareerCoachingOpen ? 'visible' : 'hidden'"
+      style="overflow: hidden"
+    >
       <h3 id="career-coaching-details">Karrier coaching - mit jelent ez a gyakorlatban?</h3>
       <p>
         A karrier coaching során a <b>jelenlegi munkahelyi helyzeteddel</b>, az elakadásaidkal és a
@@ -49,7 +53,11 @@
         működőképesek legyenek számodra.<br />
       </p>
     </div>
-    <div [@detail]="isLeadCoachingOpen ? 'visible' : 'hidden'" style="overflow: hidden">
+    <div
+      class="card-detail"
+      [@detail]="isLeadCoachingOpen ? 'visible' : 'hidden'"
+      style="overflow: hidden"
+    >
       <h3 id="lead-coaching-details">Vezetői coaching - mit jelent ez a gyakorlatban?</h3>
       <p>
         <b
@@ -75,7 +83,11 @@
         kialakításán.<br />
       </p>
     </div>
-    <div [@detail]="isJobApplyCoachingOpen ? 'visible' : 'hidden'" style="overflow: hidden">
+    <div
+      class="card-detail"
+      [@detail]="isJobApplyCoachingOpen ? 'visible' : 'hidden'"
+      style="overflow: hidden"
+    >
       <h3 id="job-apply-coaching-details">
         Álláskeresési tanácsadás - mit jelent ez a gyakorlatban?
       </h3>

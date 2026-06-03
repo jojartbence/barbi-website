@@ -17,11 +17,11 @@
 .card-link {
   text-decoration: none;
   color: inherit;
-  display: block;
+  display: flex;
+  flex-direction: column;
   transition: all 0.3s ease;
-  height: 100%;
   width: 100%;
-  max-width: 350px;
+  height: 100%;
 }
 
 .card-link:hover {
@@ -35,11 +35,12 @@
   background: white;
   border-left: 4px solid var(--accent-color);
   transition: all 0.3s ease;
-  height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  height: 100%;
+  flex: 1 1 auto;
 
   &::before {
     content: '';
@@ -86,32 +87,27 @@
 }
 
 /* Expandable Details Section */
-#service-cards > div:nth-child(2) {
-  max-width: 1200px;
-  margin: 0 auto;
+.card-detail {
+  width: 100%;
+  margin-top: 1rem;
+}
 
-  h3 {
-    color: var(--primary-color);
-    font-size: 1.3rem;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
+.card-detail h3 {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+}
 
-    &:first-of-type {
-      margin-top: 0;
-    }
-  }
+.card-detail p {
+  color: var(--text-light);
+  line-height: 1.8;
+  text-align: justify;
+  margin: 0 0 1.5rem;
+}
 
-  p {
-    color: var(--text-light);
-    line-height: 1.8;
-    text-align: justify;
-    margin-bottom: 1.5rem;
-
-    b {
-      color: var(--primary-color);
-      font-weight: 600;
-    }
-  }
+.card-detail b {
+  color: var(--primary-color);
+  font-weight: 600;
 }
 
 @media (max-width: 1024px) {
