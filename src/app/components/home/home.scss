@@ -64,6 +64,10 @@
     color: rgba(255, 255, 255, 0.95);
     line-height: 1.8;
   }
+
+  .cta-button {
+    color: var(--primary-color);
+  }
 }
 
 /* CTA uses the global `.cta-button` definition in src/styles.scss; no component-level override needed. */
