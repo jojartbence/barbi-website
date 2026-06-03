@@ -15,7 +15,12 @@
       </div>
     </div>
     <div class="contact-form">
-      <form>
+      <form (submit)="submitForm($event)">
+        <input type="hidden" name="access_key" [value]="config.web3forms.accessKey" />
+        <input type="hidden" name="subject" value="Új üzenet a Barbi Coaching weboldalról" />
+        <input type="hidden" name="redirect" value="" />
+        <input type="text" name="botcheck" style="display: none" />
+
         <div class="form-group">
           <input type="text" name="name" placeholder="Név" required />
         </div>
@@ -27,6 +32,19 @@
         </div>
         <button type="submit" class="button">Küldés</button>
       </form>
+      @if (errorMessage) {
+        <div class="error-message">{{ errorMessage }}</div>
+      }
     </div>
+
+    @if (successPopupVisible) {
+      <div class="success-popup">
+        <div class="popup-content">
+          <h4>Üzeneted sikeresen elküldve!</h4>
+          <p>Köszönöm, hamarosan válaszolok a megadott email címedre.</p>
+          <button type="button" class="button" (click)="closePopup()">Bezárás</button>
+        </div>
+      </div>
+    }
   </div>
 </section>

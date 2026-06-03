@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, NgZone } from '@angular/core';
+import { config } from '../../../config';
 import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
 
 @Component({
@@ -8,4 +9,56 @@ import { ScrollAnimationDirective } from '../../directives/scroll-animation.dire
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
-export class Contact {}
+export class Contact {
+  successPopupVisible = false;
+  errorMessage = '';
+  config = config;
+
+  private zone = inject(NgZone);
+  private cdr = inject(ChangeDetectorRef);
+
+  async submitForm(event: Event) {
+    event.preventDefault();
+    console.log('Submit attempt - successPopupVisible before:', this.successPopupVisible);
+    this.zone.run(() => {
+      this.errorMessage = '';
+    });
+
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const result = await response.json();
+      console.log('Response received:', response.ok, result);
+
+      this.zone.run(() => {
+        if (response.ok && result.success) {
+          console.log('Setting successPopupVisible to true');
+          this.successPopupVisible = true;
+          this.cdr.detectChanges();
+          form.reset();
+        } else {
+          console.log('Setting error message:', result.message);
+          this.errorMessage = result.message || 'Hiba történt a küldés közben. Próbáld újra.';
+          this.cdr.detectChanges();
+        }
+      });
+    } catch (error) {
+      console.error('Web3Forms submit error', error);
+      this.zone.run(() => {
+        this.errorMessage =
+          'Nem sikerült elküldeni az üzenetet. Ellenőrizd az internetkapcsolatot.';
+        this.cdr.detectChanges();
+      });
+    }
+  }
+
+  closePopup() {
+    this.successPopupVisible = false;
+  }
+}

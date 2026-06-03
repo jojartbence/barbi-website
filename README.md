@@ -2,6 +2,16 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
 
+## Environment Setup
+
+### Web3Forms API Key
+
+The contact form uses [Web3Forms](https://web3forms.com/) to send emails. You need to set up your API key:
+
+1. Copy `src/config.example.ts` to `src/config.ts`
+2. Replace `YOUR_WEB3FORMS_ACCESS_KEY_HERE` with your actual Web3Forms access key
+3. Never commit `src/config.ts` to version control (it's in `.gitignore`)
+
 ## Development server
 
 To start a local development server, run:
