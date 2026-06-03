@@ -22,14 +22,16 @@ nav {
 }
 
 .logo {
-  font-size: 1.35rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--primary-color);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 
   &:hover {
     color: var(--primary-light);
+    transform: scale(1.05);
   }
 }
 
