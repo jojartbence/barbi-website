@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject, NgZone } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, inject, NgZone, Output } from '@angular/core';
 import { config } from '../../../config';
 import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
 
@@ -10,6 +10,8 @@ import { ScrollAnimationDirective } from '../../directives/scroll-animation.dire
   styleUrl: './contact.scss',
 })
 export class Contact {
+  @Output() privacyClick = new EventEmitter<void>();
+
   successPopupVisible = false;
   errorMessage = '';
   config = config;
@@ -65,5 +67,10 @@ export class Contact {
 
   closePopup() {
     this.successPopupVisible = false;
+  }
+
+  openPrivacy(event: Event) {
+    event.preventDefault();
+    this.privacyClick.emit();
   }
 }

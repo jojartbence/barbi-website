@@ -30,6 +30,10 @@
         <div class="form-group">
           <textarea name="message" placeholder="Üzenet" rows="6" required></textarea>
         </div>
+        <p class="privacy-note">
+          A küldéssel elfogadod az
+          <a href="#" (click)="openPrivacy($event)">adatvédelmi tájékoztatót</a>.
+        </p>
         <button type="submit" class="button">Küldés</button>
       </form>
       @if (errorMessage) {

@@ -7,7 +7,8 @@
     <app-services></app-services>
     <app-service-cards></app-service-cards>
     <app-process></app-process>
-    <app-contact></app-contact>
+    <app-contact (privacyClick)="privacyVisible = true"></app-contact>
+    <app-privacy [visible]="privacyVisible" (closed)="privacyVisible = false"></app-privacy>
   </main>
 
   <app-footer></app-footer>

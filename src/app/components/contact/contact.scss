@@ -118,6 +118,18 @@ textarea {
   }
 }
 
+.privacy-note {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  color: rgba(34, 56, 73, 0.8);
+  line-height: 1.6;
+}
+
+.privacy-note a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
 .success-popup {
   position: fixed;
   inset: 0;

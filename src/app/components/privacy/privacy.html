@@ -1,0 +1,67 @@
+@if (visible) {
+  <div
+    class="privacy-overlay"
+    tabindex="0"
+    role="button"
+    (click)="handleBackgroundClick($event)"
+    (keydown.enter)="handleBackgroundClick($event)"
+    (keydown.space)="handleBackgroundClick($event)"
+  >
+    <div class="privacy-modal">
+      <button type="button" class="privacy-close" (click)="closed.emit()">×</button>
+      <div class="privacy-content">
+        <h2>Adatvédelmi nyilatkozat</h2>
+        <p>
+          A Simon Barbara coaching honlapon megadott adataidat kizárólag a kapcsolattartás céljából
+          használjuk fel. A név, email cím és az üzeneted az üzenetküldéshez szükséges, és csak a
+          megadott ügyintézéshez kerülnek kezelésre.
+        </p>
+
+        <h3>Adatkezelő</h3>
+        <p>
+          Adatkezelő: Simon Barbara
+          <br />Email: <a href="mailto:hello@simonbarbara.hu">hello@simonbarbara.hu</a>
+        </p>
+
+        <h3>Gyűjtött adatok</h3>
+        <ul>
+          <li>Név</li>
+          <li>Email cím</li>
+          <li>Üzenet szövege</li>
+          <li>Böngésző és kapcsolódási információk a webhoszting szolgáltatás részeként</li>
+        </ul>
+
+        <h3>Adatfeldolgozás célja</h3>
+        <p>
+          Az adatokat kizárólag arra használjuk, hogy választ adjunk a honlapról érkező
+          megkeresésedre. Nem használjuk fel marketing célokra, és nem adjuk el harmadik félnek.
+        </p>
+
+        <h3>Web3Forms használata</h3>
+        <p>
+          A kapcsolatfelvételi űrlap a Web3Forms szolgáltatáson keresztül küldi el az adatokat. A
+          Web3Forms a beküldött adatokat a saját adatvédelmi szabályzata szerint kezeli.
+        </p>
+
+        <h3>Adattovábbítás</h3>
+        <p>
+          Az űrlapot elküldjük a Web3Forms felé, amely az adatokat az üzenet továbbításához dolgozza
+          fel. Egyéb külső szolgáltató részére csak akkor adunk át adatot, ha jogszabály kötelez rá.
+        </p>
+
+        <h3>Adattárolás</h3>
+        <p>
+          A honlapon megadott adatokat csak addig tároljuk, amíg a megkeresés feldolgozásához
+          szükséges. Amennyiben szeretnéd, kérésre töröljük az adataidat.
+        </p>
+
+        <h3>Jogok</h3>
+        <p>
+          Kérheted az adataidhoz való hozzáférést, helyesbítését vagy törlését, illetve
+          tiltakozhatsz az adatkezelés ellen. Ha ilyen igényed van, írj emailt a
+          <a href="mailto:hello@simonbarbara.hu">hello@simonbarbara.hu</a> címre.
+        </p>
+      </div>
+    </div>
+  </div>
+}
