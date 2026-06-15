@@ -24,6 +24,7 @@ ng serve --host 0.0.0.0
 ### Publish to web hosting via SSH
 
 ```bash
+rm -rf dist/
 ng build --configuration production
 rsync -avz dist/barbi-website/browser/ <USERNAME>@<WEBHOST>:/web/<WEBSITE_NAME>/
 ```
