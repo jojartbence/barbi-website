@@ -12,6 +12,34 @@ The contact form uses [Web3Forms](https://web3forms.com/) to send emails. You ne
 2. Replace `YOUR_WEB3FORMS_ACCESS_KEY_HERE` with your actual Web3Forms access key
 3. Never commit `src/config.ts` to version control (it's in `.gitignore`)
 
+## Contributing
+
+### Build and host locally
+
+```bash
+npm install
+ng serve --host 0.0.0.0
+```
+
+### Publish to web hosting via SSH
+
+```bash
+ng build --configuration production
+rsync -avz dist/barbi-website/browser/ <USERNAME>@<WEBHOST>:/web/<WEBSITE_NAME>/
+```
+
+### Publish to github pages (no longer in use)
+
+```bash
+git checkout main
+ng serve --host 0.0.0.0
+# ... Do your changes ...
+# ... Commit and push your changes to main ...
+# Update github pages branch while keep main checked out:
+ng build --base-href "https://jojartbence.github.io/barbi-website/"
+angular-cli-ghpages --dir=dist/barbi-website/browser
+```
+
 ## Development server
 
 To start a local development server, run:
@@ -67,24 +95,3 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
-## Contributing
-
-### Build and host locally
-
-```bash
-npm install
-ng serve --host 0.0.0.0
-```
-
-### Publish to github pages
-
-```bash
-git checkout main
-ng serve --host 0.0.0.0
-# ... Do your changes ...
-# ... Commit and push your changes to main ...
-# Update github pages branch while keep main checked out:
-ng build --base-href "https://jojartbence.github.io/barbi-website/"
-angular-cli-ghpages --dir=dist/barbi-website/browser
-```
