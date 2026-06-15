@@ -22,10 +22,15 @@ export class Contact {
     console.log('Submit attempt - successPopupVisible before:', this.successPopupVisible);
     this.zone.run(() => {
       this.errorMessage = '';
+      this.successPopupVisible = false;
     });
 
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
+    formData.set('access_key', this.config.web3forms.accessKey);
+    formData.set('subject', 'Új üzenet a Barbi Coaching weboldalról');
+    formData.set('redirect', '');
+    formData.set('botcheck', '');
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
